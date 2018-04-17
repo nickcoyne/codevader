@@ -34,11 +34,19 @@ page '/*.txt', layout: false
 #   end
 # end
 
+activate :external_pipeline,
+         name: :webpack,
+         command: build? ?
+         "./node_modules/webpack/bin/webpack.js --bail -p" :
+         "./node_modules/webpack/bin/webpack.js --watch -d --progress --color",
+         source: ".tmp/dist",
+         latency: 1
+
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
+  # "Ignore" JS so webpack has full control.
+  ignore { |path| path =~ /\/(.*)\.js$/ && $1 != 'site' }
 
-  # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_css
+  activate :minify_javascript
 end
