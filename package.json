@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickcoyne/codevader.git"
+  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "extract-text-webpack-plugin": "^3.0.2",
-    "node-sass": "^4.8.3",
-    "sass-loader": "^7.0.1",
-    "webpack": "^4.5.0"
-  }
+  "bugs": {
+    "url": "https://github.com/nickcoyne/codevader/issues"
+  },
+  "homepage": "https://github.com/nickcoyne/codevader#readme"
 }
